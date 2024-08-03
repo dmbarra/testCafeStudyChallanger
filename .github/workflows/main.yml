@@ -30,4 +30,5 @@ jobs:
         run: npm run lint
 
       - name: Run Testcafe
-        run: npm run test-chrome-headless
+        run: "echo should run on remote server"
+        # run: npm run test-chrome-headless
