@@ -1,6 +1,7 @@
 import {
   makeGetToListDevices,
   makeAUpdateOnFirstDevice,
+  makeADeleteOnLastDevice,
 } from "../api_client/api_request";
 import MainPage from "../page_object/main_page";
 import AddNewDevicePage from "../page_object/add_new_device_page";
@@ -48,4 +49,15 @@ test("Update the first Device", async (t) => {
   await t.navigateTo(host);
 
   await MainPage.verifyTextElementsOnTable("Renamed Device", "1", "MAC");
+});
+
+test("Delete the last Device", async (t) => {
+  const apiResults = await makeADeleteOnLastDevice();
+  await t.expect(apiResults[0].status).eql(200);
+
+  await t.navigateTo(host);
+
+  await MainPage.verifyTextElementsDisappearFromTheTable(
+    apiResults[1].system_name
+  );
 });

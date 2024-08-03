@@ -10,6 +10,11 @@ class MainPage {
     await t.click(this.addDevice);
   }
 
+  async verifyTextElementsDisappearFromTheTable(name) {
+    const elementToBeFind = this.mainTable.find(".device-name").withText(name);
+    await t.expect(elementToBeFind.exists).notOk();
+  }
+
   async verifyTextElementsOnTable(name, capacity, type) {
     const elementToBeFind = this.mainTable.find(".device-name").withText(name);
 

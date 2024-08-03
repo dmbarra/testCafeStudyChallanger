@@ -15,3 +15,15 @@ export async function makeAUpdateOnFirstDevice(body) {
     body: body,
   });
 }
+
+export async function makeADeleteOnLastDevice() {
+  const result = await t.request({ url: host + "/devices", method: "get" });
+  const theLastDevice = result.body[result.body.length - 1];
+  return [
+    await t.request({
+      url: host + "/devices/" + theLastDevice.id,
+      method: "delete",
+    }),
+    theLastDevice,
+  ];
+}
