@@ -3,6 +3,11 @@ import { Selector, t } from "testcafe";
 class MainPage {
   constructor() {
     this.mainTable = Selector(".device-main-box");
+    this.addDevice = Selector(".submitButton");
+  }
+
+  async clickToAddNewDevice() {
+    await t.click(this.addDevice);
   }
 
   async verifyTextElementsOnTable(name, capacity, type) {
