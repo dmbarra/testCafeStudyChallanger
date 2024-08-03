@@ -6,7 +6,7 @@
   "scripts": {
     "test-chrome-headless": "testcafe 'chrome:headless' tests/ -e",
     "test-chrome": "testcafe chrome tests/ -e",
-    "lint": "eslint .  --ext .js"
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
