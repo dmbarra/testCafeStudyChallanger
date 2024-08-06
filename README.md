@@ -20,6 +20,7 @@ _In the main pageobject, I put some locators inside the methods, repeating, I co
 _Since JS doesn't have multiple returns, for delete I returned an array, there is probably a more elegant solution to the problem._<br>
 _I didn't create more than one script for running, but to make this only requires add more profiles on config, like different ENVs, I will not take care of these "demo"._<br>
 _On method verifyTextElementsOnTable, I decided to validate the text, instead the object exists since the text is the "goal" of my assertion_<br>
+_For all scenarios we have API integration, depending on type of test, we could mock instead use real API._<br>
 
 **About the apps:**<br>
 _I had some problems running the frontend, I would put the apps inside a container, I don't know if it's part of the objective to have problems running, and the container would completely solve any related excuse._<br>
