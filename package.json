@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test-chrome-headless": "testcafe 'chrome:headless' tests/ -e",
-    "test-chrome": "testcafe chrome tests/ -e",
+    "test-chrome": "testcafe --config-file .testcaferc.cjs",
     "lint": "eslint ."
   },
   "repository": {
